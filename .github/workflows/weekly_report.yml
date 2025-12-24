@@ -21,6 +21,12 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
+        - name: List available models (debug)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          curl -sS "https://generativelanguage.googleapis.com/v1beta/models?key=$GEMINI_API_KEY" | head -c 4000
+
       - name: Run agent
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
