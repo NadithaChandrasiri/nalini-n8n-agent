@@ -24,7 +24,7 @@ def fetch_rss(url: str, max_items: int = 30) -> list[dict]:
 
 def gemini_generate(prompt: str) -> str:
     api_key = os.environ["GEMINI_API_KEY"]
-    model = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+    model = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
