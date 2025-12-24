@@ -24,7 +24,7 @@ jobs:
       - name: Run agent
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-1.5-flash
+          GEMINI_MODEL: gemini-2.0-flash
           SMTP_HOST: smtp.gmail.com
           SMTP_PORT: "587"
           SMTP_USER: ${{ secrets.SMTP_USER }}
